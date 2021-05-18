@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import CharacterItem from './CharacterItem';
 
 const CharacterList = ({ characters }) => (
-	<ul>
+	<ul aria-label="characters">
 		{characters.map(character => (
-			<li>
+			<li key={`${character.name}-${character.affiliation}`}>
 				<CharacterItem
-					key={`${character.name}-${character.affiliation}`}
 					name={character.name}
 					affiliation={character.affiliation}
-					image={character.image}
+					image={character.imageUrl}
 				/>
 			</li>
 		))}
@@ -18,7 +17,11 @@ const CharacterList = ({ characters }) => (
 );
 
 CharacterList.propTypes = {
-	characters: PropTypes.arrayOf(PropTypes.any).isRequired
+	characters: PropTypes.arrayOf(PropTypes.shape({
+		name: PropTypes.string.isRequired,
+		affiliation: PropTypes.string.isRequired,
+		imageUrl: PropTypes.string.isRequired
+	})).isRequired
 };
 
 export default CharacterList;
