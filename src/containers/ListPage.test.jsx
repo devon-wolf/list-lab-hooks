@@ -5,6 +5,14 @@ import ListPage from './ListPage';
 describe('List page', () => {
   it('renders list page', () => {
     render(<ListPage />);
-	screen.getByText('List page');
+
+	// API appears to be too speedy for the test to catch the loading message unless 'loading' is forced to stay 'true'
+	// screen.getByText('Loading...');
+	
+	return waitFor(() => {
+		const charList = screen.getByRole('list', { name: 'characters' });
+		expect(charList).not.toBeEmptyDOMElement();
+		expect(charList).toMatchSnapshot();
+	})
   });
 });
