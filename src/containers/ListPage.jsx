@@ -6,18 +6,33 @@ const ListPage = () => {
 	const [loading, setLoading] = useState(true);
 	const [characters, setCharacters] = useState([]);
 
-	useEffect(() => {
+	useEffect(() => {		
 		fetchTrek()
-			.then(result => setCharacters(result))
-			.finally(setLoading(false));
+			.then(result => {
+				setCharacters(result);
+				setLoading(false);
+			})
+			.catch(() => setLoading(false));
+
+		// let cancelled = false;
+		// fetchTrek()
+		// 	.then(result => {
+		// 		if (!cancelled) {
+		// 			setCharacters(result);
+		// 			setLoading(false);
+		// 		}
+		// 	})
+		// return () => {
+		// 	cancelled = true;
+		// }
 	}, []);
 	
 	return (
 		<div>
 			<h1>List page</h1>
 			{loading
-				? <p>Loading...</p>
-				: <CharacterList characters={characters}/>
+				? (<p>Loading...</p>)
+				: (<CharacterList characters={characters}/>)
 			}
 		</div>
 	);

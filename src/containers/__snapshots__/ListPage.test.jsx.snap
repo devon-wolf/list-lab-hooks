@@ -6,17 +6,6 @@ exports[`List page renders list page 1`] = `
 >
   <li>
     <p>
-      Commander Kor
-      : 
-      Klingon Empire
-    </p>
-    <img
-      alt="Commander Kor"
-      src="https://i.pinimg.com/originals/ef/db/50/efdb506878d15185ea69cf310749458a.jpg"
-    />
-  </li>
-  <li>
-    <p>
       Nurse Chapel
       : 
       Starfleet Command
@@ -541,6 +530,17 @@ exports[`List page renders list page 1`] = `
     <img
       alt="Amanda Grayson"
       src="https://img.sharetv.com/shows/characters/large/star_trek.amanda_grayson.jpg"
+    />
+  </li>
+  <li>
+    <p>
+      Commander Kor
+      : 
+      Klingon Defense Force
+    </p>
+    <img
+      alt="Commander Kor"
+      src="https://i.pinimg.com/originals/ef/db/50/efdb506878d15185ea69cf310749458a.jpg"
     />
   </li>
 </ul>
