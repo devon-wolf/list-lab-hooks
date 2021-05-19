@@ -3,3 +3,9 @@ export const fetchTrek = () => {
 				.then(res => res.json())
 				.catch(console.error);
 }
+
+export const fetchTrekById = (id) => {
+	return fetch(`https://trek-dex.herokuapp.com/api/v1/characters/${id}`)
+		.then(res => res.json())
+		.catch(console.error);
+}

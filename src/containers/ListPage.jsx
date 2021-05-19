@@ -13,18 +13,6 @@ const ListPage = () => {
 				setLoading(false);
 			})
 			.catch(() => setLoading(false));
-
-		// let cancelled = false;
-		// fetchTrek()
-		// 	.then(result => {
-		// 		if (!cancelled) {
-		// 			setCharacters(result);
-		// 			setLoading(false);
-		// 		}
-		// 	})
-		// return () => {
-		// 	cancelled = true;
-		// }
 	}, []);
 	
 	return (

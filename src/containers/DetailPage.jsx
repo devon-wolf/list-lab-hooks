@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import CharacterDetail from '../components/CharacterDetail';
+import { fetchTrekById } from '../services/starTrekFetch';
 
-const DetailPage = () => {
+const DetailPage = ({ match }) => {
 	const [loading, setLoading] = useState(false);
-	const [character, setCharacter] = useState({ name: 'Me', affiliation: 'None', imageUrl: 'no.jpg'});
+	const [character, setCharacter] = useState({});
+
+	useEffect(() => {
+		fetchTrekById(match.params.id)
+			.then(result => {
+				setCharacter(result);
+				setLoading(false);
+			})
+			.catch(() => setLoading(false));
+	}, []);
 
 	return (
 	<div>
