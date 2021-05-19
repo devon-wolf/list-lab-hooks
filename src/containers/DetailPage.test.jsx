@@ -7,7 +7,7 @@ describe('Detail page', () => {
     render(<DetailPage />);
 	
 	screen.getByText('Detail page');
-	screen.getByText('Loading');
+	// screen.getByText('Loading');
 
 	return waitFor(() => {
 		const character = screen.getByLabelText('character details');
