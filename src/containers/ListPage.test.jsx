@@ -6,7 +6,6 @@ describe('List page', () => {
   it('renders list page', async () => {
     render(<ListPage />);
 
-	// API appears to be too speedy for the test to catch the loading message unless 'loading' is forced to stay 'true'
 	screen.getByText('Loading...');
 	
 	return waitFor(() => {
