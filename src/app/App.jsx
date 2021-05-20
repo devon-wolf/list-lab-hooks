@@ -2,7 +2,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  Link
 } from 'react-router-dom';
 import ListPage from '../containers/ListPage';
 import DetailPage from '../containers/DetailPage';
@@ -10,6 +11,11 @@ import DetailPage from '../containers/DetailPage';
 export default function App() {
   return (
     <Router>
+      <header>
+        <Link to="/">
+          <h1>Some Star Trek Characters</h1>
+        </Link>
+      </header>
       <Switch>
         <Route
           path="/"
