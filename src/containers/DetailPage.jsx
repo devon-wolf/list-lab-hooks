@@ -3,7 +3,7 @@ import CharacterDetail from '../components/CharacterDetail';
 import { fetchTrekById } from '../services/starTrekFetch';
 
 const DetailPage = ({ match }) => {
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const [character, setCharacter] = useState({});
 
 	useEffect(() => {

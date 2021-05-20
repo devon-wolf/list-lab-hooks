@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import DetailPage from './DetailPage';
 
-describe.skip('Detail page', () => {
+describe('Detail page', () => {
   it('renders detail page', async () => {
     
 	render(<DetailPage match={{ params: { id: '7' } }}/>);
@@ -10,8 +10,11 @@ describe.skip('Detail page', () => {
 	screen.getByText('Detail page');
 	screen.getByText('Loading...');
 
-	// const character = await screen.findByLabelText('character details');
-	
-	// expect(character).not.toBeEmptyDOMElement();
+	return waitFor(() => {
+		const character = screen.getByLabelText('character details');
+		expect(character).not.toBeEmptyDOMElement();
+		expect(character).toMatchSnapshot();	
 	});
-  });
+		
+	});
+});
