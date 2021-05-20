@@ -1,10 +1,16 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import ListPage from './ListPage';
 
 describe('List page', () => {
   it('renders list page', async () => {
-    render(<ListPage />);
+	
+    render(
+	<MemoryRouter>
+		<ListPage />
+	</MemoryRouter>
+	);
 
 	screen.getByText('Loading...');
 	
