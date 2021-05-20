@@ -16,13 +16,15 @@ export const useCharacters = () => {
 };
 
 export const useCharacter = (id) => {
+	const [loading, setLoading] = useState(true);
 	const [character, setCharacter] = useState({});
 
 	useEffect(() => {
 		fetchTrekById(id)
 			.then(result => setCharacter(result))
-			.catch(console.error);
+			.catch(console.error)
+			.finally(() => setLoading(false));
 	});
 
-	return character;
+	return [loading, character];
 }
