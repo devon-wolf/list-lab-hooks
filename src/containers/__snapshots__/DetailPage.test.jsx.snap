@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail page renders detail page 1`] = `
+<div
+  aria-label="character details"
+>
+  <p>
+    Mr. Spock
+    : 
+    Starfleet Command
+  </p>
+  <img
+    alt="Mr. Spock"
+    src="https://www.startrek.com/sites/default/files/styles/content_full/public/images/2019-07/8b10a9280bd46b8874af9b5cadec91d5.jpg?itok=3V9YqePf"
+  />
+</div>
+`;

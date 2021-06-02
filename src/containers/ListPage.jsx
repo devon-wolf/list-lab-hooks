@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CharacterList from '../components/CharacterList';
-import { fetchTrek } from '../services/starTrekFetch';
+import { useCharacters } from '../hooks/useCharacters';
 
 const ListPage = () => {
-	const [loading, setLoading] = useState(true);
-	const [characters, setCharacters] = useState([]);
-
-	useEffect(() => {		
-		fetchTrek()
-			.then(result => {
-				setCharacters(result);
-				setLoading(false);
-			})
-			.catch(() => setLoading(false));
-	}, []);
+	const [loading, characters] = useCharacters();
 	
 	return (
 		<div>

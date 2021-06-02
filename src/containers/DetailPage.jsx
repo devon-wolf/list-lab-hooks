@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CharacterDetail from '../components/CharacterDetail';
-import { fetchTrekById } from '../services/starTrekFetch';
+import { useCharacter } from '../hooks/useCharacters';
 
 const DetailPage = ({ match }) => {
-	const [loading, setLoading] = useState(false);
-	const [character, setCharacter] = useState({});
 
-	useEffect(() => {
-		fetchTrekById(match.params.id)
-			.then(result => {
-				setCharacter(result);
-				setLoading(false);
-			})
-			.catch(() => setLoading(false));
-	}, []);
+	const [loading, character] = useCharacter(match.params.id);
 
 	return (
 	<div>
